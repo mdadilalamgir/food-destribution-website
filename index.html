@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surplus2Serve - Community Food Redistribution Network</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-utensils"></i>
+                <span>Surplus2Serve</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#report">Report Surplus</a></li>
+                <li><a href="#volunteer">Volunteer</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Fighting Hunger, Reducing Waste</h1>
+                <p class="hero-subtitle">Connect surplus food with those who need it most - within 2 hours</p>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-weight"></i>
+                        <h3 id="totalFood">0 kg</h3>
+                        <p>Food Redistributed</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-utensils"></i>
+                        <h3 id="totalMeals">0</h3>
+                        <p>Meals Served</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-hands-helping"></i>
+                        <h3 id="totalAlerts">0</h3>
+                        <p>Surplus Alerts</p>
+                    </div>
+                </div>
+                <div class="cta-buttons">
+                    <a href="#report" class="btn btn-primary">Report Surplus Food</a>
+                    <a href="#volunteer" class="btn btn-secondary">Become a Volunteer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">1</div>
+                    <h3>Report Surplus</h3>
+                    <p>Restaurants submit leftover food details through our simple form</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">2</div>
+                    <h3>Instant Alert</h3>
+                    <p>NGOs and volunteers receive immediate notifications</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">3</div>
+                    <h3>Quick Pickup</h3>
+                    <p>Food is collected within 2 hours and delivered to those in need</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">4</div>
+                    <h3>Track Impact</h3>
+                    <p>Monitor the difference we're making together</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Report Surplus Form -->
+    <section id="report" class="report-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Report Surplus Food</h2>
+                <p>Have leftover food? Help us redistribute it to those in need</p>
+            </div>
+            <form id="surplusForm" class="surplus-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="restaurantName">Restaurant/Organization Name *</label>
+                        <input type="text" id="restaurantName" required placeholder="Enter name">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactPerson">Contact Person *</label>
+                        <input type="text" id="contactPerson" required placeholder="Contact name">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactNumber">Contact Number *</label>
+                        <input type="tel" id="contactNumber" required placeholder="+1 234 567 8900">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" required placeholder="email@example.com">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="foodType">Type of Food *</label>
+                    <select id="foodType" required>
+                        <option value="">Select food type</option>
+                        <option value="Cooked Meals">Cooked Meals</option>
+                        <option value="Baked Goods">Baked Goods</option>
+                        <option value="Fresh Produce">Fresh Produce</option>
+                        <option value="Packaged Food">Packaged Food</option>
+                        <option value="Beverages">Beverages</option>
+                        <option value="Mixed">Mixed Items</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="foodDescription">Food Description *</label>
+                    <textarea id="foodDescription" required placeholder="Describe the food items (e.g., Rice, curry, bread, salad)"></textarea>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="quantity">Quantity (kg) *</label>
+                        <input type="number" id="quantity" required min="1" placeholder="e.g., 10">
+                    </div>
+                    <div class="form-group">
+                        <label for="portions">Estimated Portions *</label>
+                        <input type="number" id="portions" required min="1" placeholder="e.g., 25">
+                    </div>
+                    <div class="form-group">
+                        <label for="prepTime">Time Since Preparation *</label>
+                        <select id="prepTime" required>
+                            <option value="">Select time</option>
+                            <option value="0-1 hours">0-1 hours</option>
+                            <option value="1-2 hours">1-2 hours</option>
+                            <option value="2-3 hours">2-3 hours</option>
+                            <option value="3-4 hours">3-4 hours</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="expiryTime">Available Until *</label>
+                        <input type="time" id="expiryTime" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="pickupAddress">Pickup Address *</label>
+                    <textarea id="pickupAddress" required placeholder="Full address with landmarks"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="specialInstructions">Special Instructions</label>
+                    <textarea id="specialInstructions" placeholder="Any special handling or storage requirements"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="foodSafety" required>
+                        <span>I confirm that the food is safe, hygienic, and suitable for consumption</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-large">
+                    <i class="fas fa-paper-plane"></i> Submit Surplus Alert
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Volunteer Section -->
+    <section id="volunteer" class="volunteer-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Volunteer Dashboard</h2>
+                <p>Available surplus food alerts in your area</p>
+            </div>
+            <div id="alertsContainer" class="alerts-container">
+                <div class="no-alerts">
+                    <i class="fas fa-inbox"></i>
+                    <p>No active alerts at the moment</p>
+                    <p class="small">Check back soon or enable notifications</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="impact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Impact</h2>
+                <p>Together, we're making a difference in our community</p>
+            </div>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Weekly Impact</h3>
+                    <div class="impact-stats">
+                        <div class="impact-item">
+                            <span class="label">Food Saved:</span>
+                            <span class="value" id="weeklyFood">0 kg</span>
+                        </div>
+                        <div class="impact-item">
+                            <span class="label">Meals Served:</span>
+                            <span class="value" id="weeklyMeals">0</span>
+                        </div>
+                        <div class="impact-item">
+                            <span class="label">CO₂ Reduced:</span>
+                            <span class="value" id="weeklyCO2">0 kg</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="impact-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Community Partners</h3>
+                    <div class="partners-list" id="partnersList">
+                        <p>Loading partners...</p>
+                    </div>
+                </div>
+                <div class="impact-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Recent Activity</h3>
+                    <div class="activity-list" id="activityList">
+                        <p>Loading recent activity...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+    <div class="container">
+        <div class="about-content">
+            <h2>About Surplus2Serve</h2>
+            <p>Surplus2Serve is a community-driven initiative to combat food waste and hunger simultaneously. We connect local restaurants, caterers, and food businesses with NGOs and volunteers to ensure that surplus edible food reaches those who need it most - all within a 2-hour window to maintain food safety and quality.</p>
+            
+            <div class="sdg-icons">
+                <a href="https://sdgs.un.org/goals/goal2" target="_blank" class="sdg-card">
+                    <img src="images/sdg2.png" alt="SDG 2: Zero Hunger">
+                </a>
+                
+                <a href="https://sdgs.un.org/goals/goal12" target="_blank" class="sdg-card">
+                    <img src="images/sdg12.png" alt="SDG 12: Responsible Consumption">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Surplus2Serve</h4>
+                    <p>Fighting hunger, one meal at a time</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#report">Report Surplus</a></li>
+                        <li><a href="#volunteer">Volunteer</a></li>
+                        <li><a href="#impact">Impact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> info@surplus2serve.org</p>
+                    <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                </div>
+                <div class="footer-section">
+                    <h4>SDG Goals</h4>
+                    <p>Supporting UN Sustainable Development Goals 2 & 12</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Surplus2Serve. All rights reserved. | Built for community impact</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Surplus Alert Submitted!</h3>
+            <p>Thank you for helping reduce food waste. Volunteers and NGOs in your area have been notified.</p>
+            <button id="closeModalBtn" class="btn btn-primary">Close</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script type="module" src="firebase-setup.js"></script>
+</body>
+</html>
